@@ -14,6 +14,8 @@ const Comments = ({postId}) => {
     queryFn: () => 
       makeRequest.get("/comments?postId=" + postId).then((res) => res.data)
   });
+
+  console.log(data);
   
   const queryClient = useQueryClient();
 
