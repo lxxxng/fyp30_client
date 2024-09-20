@@ -1,0 +1,93 @@
+@import '../../../../style.scss';
+
+.event-page {
+  @include themify($themes) {
+    padding: 20px;
+    background-color: themed('bg');
+    border-radius: 12px;
+    margin: 30px 0px;
+    font-family: 'Arial', sans-serif;
+
+    h2 {
+      font-weight: 600;
+      color: themed('textColor');
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .event-card {
+        background-color: themed('bgSoft');
+        padding: 20px;
+        margin: 7px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns layout */
+        gap: 20px;
+
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+          color: themed('textColor');
+          margin-bottom: 10px;
+          grid-column: span 2; /* Span across both columns */
+        }
+
+        .event-detail {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          color: themed('textColorSoft');
+          margin: 5px 0;
+
+          .icon {
+            margin-right: 10px;
+            color: themed('textColor');
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+
+            strong {
+              color: themed('textColor');
+            }
+          }
+        }
+
+        .event-actions {
+          display: flex;
+          gap: 10px;
+          margin-top: 10px;
+          align-self: flex-end; // Align actions to the end of the card
+
+          .mui-icon-button {
+            color: themed('textColorSoft');
+            background-color: themed('bgSoft');
+            border-radius: 5px;
+            padding: 8px;
+
+            &:hover {
+              background-color: themed('bg');
+              color: themed('textColor');
+            }
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      .event-list {
+        .event-card {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}

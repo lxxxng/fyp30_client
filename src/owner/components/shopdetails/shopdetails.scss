@@ -1,0 +1,63 @@
+@import '../../../style.scss';
+
+.shop-details-container {
+    @include themify($themes) {
+        padding: 20px;
+        max-width: 100%;
+        background-color: themed('bgSoft');
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 100%;
+
+        @include mobile {
+            margin: 0 5px;
+        }
+
+        @include tablet {
+        }
+
+
+        .header-container {
+            display:flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            h2 {
+                margin: 0 10px;
+                color: themed('textColor');
+            }
+    
+            .MuiIconButton-root {
+                color: themed('textColor');
+            }
+        }
+
+        .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .shop-navbar {
+            margin-bottom: 20px;
+        
+            .MuiTabs-root {
+                border-bottom: 1px solid themed('border');
+            }
+    
+            .MuiTab-root {
+                color: themed('textColor');
+            }
+        }
+
+        .shop-content {
+            background-color: themed('bg');
+            border-radius: 8px;
+    
+            @include mobile {
+            }
+    
+            @include tablet {
+            }
+            
+        }
+    }
+}

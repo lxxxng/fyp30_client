@@ -1,0 +1,56 @@
+@import '../../style.scss';
+
+.shoplisting {
+    @include themify($themes) {
+        padding: 20px;
+        background-color: themed('bg');
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        font-family: 'Arial', sans-serif;
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;    
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 28px;
+                font-weight: 600;
+                color: themed('textColor');
+            }
+
+            button {
+                background-color: themed('bgSoft');
+                border: none;
+                border-radius: 8px;
+                padding: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: themed('bg');
+                }
+
+                svg {
+                    color: themed('textColor');
+                }
+            }
+        }
+
+        .shoplisting-card {
+            background-color: themed('bgSoft');
+            padding: 3px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        @include mobile {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}

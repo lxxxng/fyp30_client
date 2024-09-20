@@ -1,0 +1,105 @@
+@import "../../../style.scss";
+.leftBar {
+  @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+
+    @include mobile{
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      hr {
+        margin: 20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: themed("border");
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          font-size: 12px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: themed("bg");
+          color:themed("textColor");
+          border: none;
+          cursor: pointer;
+
+
+          img {
+            width: 30px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .logoutBtn {
+        display: flex;
+        align-items: center;
+        background-color: #f44336; /* Red color for logout */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+          background-color: #d32f2f; /* Darker red on hover */
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        .icon {
+          margin-right: 8px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

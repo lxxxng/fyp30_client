@@ -1,0 +1,119 @@
+@import "../../../style.scss";
+
+.shop-form-container {
+  @include themify($themes) {
+    max-width: 90%; // Adjust width for better responsiveness
+    margin: 0 auto; // Center the form
+    padding: 2rem;
+    background-color: themed("bgSoft");
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: themed("textColor");
+    }
+  }
+
+  .shop-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Two columns for form fields
+    gap: 1.5rem; // Add space between fields
+
+    .form-group {
+      grid-column: span 2; // Make some fields span two columns
+      margin-bottom: 1rem;
+
+      label {
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        background-color: transparent;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 100px;
+      }
+
+      .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+
+        input[type="checkbox"] {
+          display: none; // Hide the checkbox
+        }
+
+        label {
+          display: flex;
+          align-items: center;
+          cursor: pointer; // Change cursor to pointer for better UX
+          padding: 0.5rem;
+          border: 1px solid transparent; // Add border for visual feedback
+          border-radius: 4px;
+          transition: background-color 0.3s ease, color 0.3s ease; // Smooth transition
+
+          &:hover {
+            background-color: #f0f0f0; // Light gray on hover
+          }
+        }
+
+        input:checked + label {
+          background-color: #28a745; // Change background when checked
+          color: white; // Change text color when checked
+          border-color: #218838; // Change border color when checked
+        }
+      }
+    }
+
+    .btnGroup {
+      display: flex;
+      justify-content: space-between; // Ensure buttons are spread out
+      margin-top: 1.5rem;
+    
+      button {
+        width: 48%; // Ensure both buttons are of equal size
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease; // Smooth transition for hover effects
+    
+        &.submit-button {
+          background-color: #28a745; // Green for submit
+          color: white;
+          border: 1px solid transparent;
+    
+          &:hover {
+            background-color: #218838; // Darken on hover
+            border-color: #1e7e34;
+          }
+        }
+    
+        &.cancel-button {
+          background-color: white;
+          color: #dc3545; // Red color for cancel
+          border: 1px solid #dc3545;
+    
+          &:hover {
+            background-color: #dc3545;
+            color: white; // Invert colors on hover
+            border-color: #c82333;
+          }
+        }
+      }
+    }
+  }
+}

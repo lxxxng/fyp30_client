@@ -1,0 +1,63 @@
+.shop-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+}
+
+.shop-form {
+  display: flex;
+  flex-direction: column;
+  
+  .form-group {
+    margin-bottom: 1rem;
+    
+    label {
+      font-size: 1rem;
+      color: #555;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+  }
+  
+  .submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}
+
+.noShopMSG {
+  padding-left: 240px;
+  padding-top: 250px;
+}
