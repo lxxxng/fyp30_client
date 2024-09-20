@@ -36,7 +36,7 @@ const LeftBar = () => {
     localStorage.removeItem("user");
 
     try {
-      await axios.post("http://localhost:3001/auth/logout");
+      await axios.post("https://fyp30-b07db14946ce.herokuapp.com/auth/logout");
       navigate("/");
     } catch (err) {
       setErr(err.response.data);

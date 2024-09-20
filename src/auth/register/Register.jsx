@@ -51,7 +51,7 @@ const Register = () => {
       }
 
       try {
-        await axios.post("http://localhost:3001/auth/register", modifiedValues);
+        await axios.post("https://fyp30-b07db14946ce.herokuapp.com/auth/register", modifiedValues);
         navigate("/");
       } catch (err) {
         setErr(err.response?.data || "Something went wrong");

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const makeRequest = axios.create({
-    baseURL:"http://localhost:3001/",
+    baseURL:"https://fyp30-b07db14946ce.herokuapp.com/",
     withCredentials:true,
 });
