@@ -10,7 +10,7 @@ const Comments = ({postId}) => {
   const { currentUser } = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ['comments'],
+    queryKey: ['comments', postId],
     queryFn: () => 
       makeRequest.get("/comments?postId=" + postId).then((res) => res.data)
   });
